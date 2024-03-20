@@ -11,12 +11,14 @@
 	<script>
 		//Como esta al mismo nivel podemos verlo asi
 		fetch("prueba.txt")
-		//
+		// Si esto lo abrimos de forma local nos da un error CORS
 		.then(respuesta => respuesta.text())
 		.then(contenido =>{
-			console.log(contenido);
+			contenido.forEach((indice) => {
+				indice = document.createElement("li");
+			});
 		});
-
+//De la lista de nombres hacer un li de ellos
 	</script>
 </body>
 </html>
