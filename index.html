@@ -15,7 +15,8 @@
 		.then(respuesta => respuesta.text())
 		.then(contenido =>{
 			contenido.forEach((indice) => {
-				indice = document.createElement("li");
+				let lista = document.createElement("li");
+				lista.appendChild(indice);
 			});
 		});
 //De la lista de nombres hacer un li de ellos
