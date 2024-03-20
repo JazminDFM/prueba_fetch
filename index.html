@@ -8,15 +8,20 @@
 </head>
 <body>
 	<h1>prueba</h1>
+	<ul></ul>
 	<script>
+		const lista = document.querySelector("ul");
+
 		//Como esta al mismo nivel podemos verlo asi
 		fetch("prueba.txt")
 		// Si esto lo abrimos de forma local nos da un error CORS
 		.then(respuesta => respuesta.text())
-		.then(contenido =>{
-			contenido.forEach((indice) => {
-				let lista = document.createElement("li");
-				lista.appendChild(indice);
+		.then(contenido => {
+			//Esto me añade los nombres de mi txt ordenados con sort
+			contenido.split(",").sort().forEach(nombre => {
+				let item = document.createElement("li");
+				item.innerText = nombre;
+				lista.appendChild(item);
 			});
 		});
 //De la lista de nombres hacer un li de ellos
